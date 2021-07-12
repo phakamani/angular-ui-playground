@@ -1,5 +1,6 @@
 import { User } from './../../model/user.model';
 import { LoginService } from './login.service';
+import { Response } from 'src/model/response.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
@@ -41,12 +42,16 @@ export class LoginComponent implements OnInit {
     };
 
     this.loginService.login(user).subscribe((res) => {
-      if (res.status === 404) {
-        this.response = res.error;
-      }
       this.response = res;
     }, error => {
-      this.response = error.error;
+      if (error.error) {
+        this.response = error.error;
+      } else {
+        this.response = {
+          status: 'error',
+          message: 'Could not connect to server'
+        }
+      }
     });
   }
 }

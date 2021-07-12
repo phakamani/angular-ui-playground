@@ -1,3 +1,4 @@
+import { Response } from './../../model/response.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from './../../model/user.model';
 import { Injectable } from '@angular/core';
@@ -24,6 +25,6 @@ export class LoginService {
   }
 
   handleError(error: HttpErrorResponse) {
-    return throwError(error.error);
+    return throwError(error);
   }
 }
