@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "nodemon server/server.js"
+    "server": "nodemon server/server.js",
+    "cypress:open": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@angular/platform-browser": "~10.0.2",
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/router": "~10.0.2",
+    "cypress": "^7.7.0",
     "nodemon": "^2.0.12",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

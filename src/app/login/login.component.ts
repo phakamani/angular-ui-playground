@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(user).subscribe((res) => {
       this.response = res;
     }, error => {
-      if (error.error) {
+      if (error.error.status) {
         this.response = error.error;
       } else {
         this.response = {
