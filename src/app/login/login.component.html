@@ -1,17 +1,28 @@
-<div fxLayoutAlign="center center" class="main-div" fxFlexFill>
+<div fxLayoutAlign="center center" class="main-div" fxFlexFill *ngIf="loginForm">
   <mat-card fxFlex="25">
     <mat-toolbar color="primary">Login page</mat-toolbar>
 
-    <form class="login-form" fxLayoutAlign="stretch" fxLayout="column">
+    <form class="login-form"
+      [formGroup] = "loginForm"
+      (ngSubmit)="onSubmit()"
+      fxLayoutAlign="stretch"
+      fxLayout="column">
       <mat-form-field>
-        <input matInput placeholder="Username">
+        <input matInput placeholder="userName" formControlName="userName">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput type="password" placeholder="Password">
+        <input matInput type="password" placeholder="password" formControlName="password">
       </mat-form-field>
 
       <button color="primary" mat-raised-button type="submit">Login</button>
+      <div *ngIf="response && response.status === 'success'" style="color: green">
+        {{response.message}}
+      </div>
+
+      <div *ngIf="response && response.status === 'error'" style="color: red">
+        {{response.message}}
+      </div>
     </form>
   </mat-card>
 </div>
