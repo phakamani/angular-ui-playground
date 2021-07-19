@@ -22,7 +22,7 @@ fdescribe('LoginService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should should allow successful login', () => {
+  it('should allow successful login', () => {
     const user: User = {
       userName: "userName",
       password: "password"
