@@ -6,8 +6,7 @@ addons:
     packages:
     - libgconf-2-4
 cache:
-  npm:true
-  directories:
+  npm:true directories:
     - ~/.cache
 install:
   - npm ci
