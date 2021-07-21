@@ -6,7 +6,16 @@ describe("Login page", () => {
     cy.visit('/');
 
     // assert if page contains "Login page"
-    cy.contains('Login page')
+    cy.contains('login');
+
+    // user should click the submit button
+    cy.get('[href="/login"]').click();
+
+    // user should click the submit button
+    cy.get('[href="/login"]').click();
+
+    cy.contains('Login page');
+
   })
 
   it("should check for username and password mismatch", () => {

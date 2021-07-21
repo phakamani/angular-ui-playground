@@ -59,6 +59,19 @@ udemy: tests course
 ## UI Prototype can be found at 
 https://projects.invisionapp.com/freehand/document/Lg5yK2jYD
 
-Example 1 
-http://www.nike.com
-http://superbalist.com
+## Database
+https://console.firebase.google.com/project/angular-playground-23023/database/angular-playground-23023-default-rtdb/data
+
+## Folder structure
+https://github.com/mathisGarberg/angular-folder-structure
+
+├── media  (Stores documentation)
+  └── src
+      ├── app
+      │   ├── core 
+              This module is for classes used by app.module. Resources which are always loaded such as route guards, HTTP interceptors, and application level services, such as the ThemeService and logging belong in this directory.
+      │   ├── data
+      │   ├── layout
+      │   ├── module
+      │   └── shared
+      └── styles
