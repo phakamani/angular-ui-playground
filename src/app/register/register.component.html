@@ -1,0 +1,109 @@
+<div class="container">
+
+   
+   <mat-card>
+      <div class="formContainer">
+         <mat-toolbar class="mat-primary">Register</mat-toolbar>
+         <div *ngIf="error"class="errorMessage alignLeft"><mat-icon>error_outline</mat-icon> <span class="errorText">{{errorMessage}}</span></div>
+         <div *ngIf="success"class="successMessage alignLeft"><mat-icon>error_outline</mat-icon> <span class="errorText">Registration successful</span></div>
+
+         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div flex="row" class="padding">
+               <div >
+                  <mat-form-field class="extend">
+                     <input matInput type='text' formControlName="name" placeholder="Name"/>
+                    </mat-form-field>
+               </div>
+
+               <div >
+                  <mat-form-field class="extend">
+                     <input matInput type='text' formControlName="surname" placeholder="Surname"/>
+                    </mat-form-field>
+               </div>
+
+                 <div>
+                  <mat-form-field class="extend">
+                     <input matInput type='text' formControlName="email" placeholder="Email"/>
+                  </mat-form-field>
+               </div>
+
+               <div >
+                  <mat-form-field class="extend">
+                     <input matInput type='text' formControlName="number" placeholder="Mobile Number"/>
+                    </mat-form-field>
+               </div>
+
+               <div >
+                  <mat-form-field class="extend">
+                     <input matInput type='password' formControlName="password" placeholder="Password"/>
+                    </mat-form-field>
+               </div>
+
+               <div >
+                  <mat-form-field class="extend">
+                     <input matInput type='password' formControlName="retypePassword" placeholder="Re-type Password"/>
+                    </mat-form-field>
+               </div>
+
+            </div>
+            
+             <button mat-button >Register</button>
+         </form>
+      </div>
+   </mat-card>
+   <br>
+   <mat-card>
+      <table>
+         <tr>
+           <th>Name</th>
+           <th>Surname</th>
+           <th>Email</th>
+           <th>Number</th>
+           <th>Actions</th>
+         </tr>
+         <tr *ngFor="let fetchData of fetchData">
+           <td>{{fetchData.name}}</td>
+           <td>{{fetchData.surname}}</td>
+           <td>{{fetchData.email}}</td>
+           <td>{{fetchData.number}}</td>
+           <td><button mat-button (click)="onEdit(fetchData.id)">Edit</button>  <button mat-button  (click)="onDelete(fetchData.id)">Delete</button></td>
+         </tr>
+       </table>
+      <!-- <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
+  
+         <ng-container matColumnDef="seqNo">
+             <div *matHeaderCellDef>Name</div>
+             <div *matCellDef="let lesson">{{fetchData.name}}</div>
+         </ng-container>
+       
+         <ng-container matColumnDef="description">
+             <div *matHeaderCellDef>Surname</div>
+             <div class="description-cell"
+                       *matCellDef="let lesson">{{fetchData.surname}}</div>
+         </ng-container>
+       
+         <ng-container matColumnDef="duration">
+             <div *matHeaderCellDef>Email</div>
+             <div class="duration-cell"
+                       *matCellDef="let lesson">{{fetchData.email}}</div>
+
+         </ng-container>
+         <ng-container matColumnDef="duration">
+            <div *matHeaderCellDef>Number</div>
+            <div class="duration-cell"
+                      *matCellDef="let lesson">{{fetchData.number}}</div>
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+         <div *matHeaderCellDef>Actions</div>
+         <div class="duration-cell"
+                   *matCellDef="let lesson"></div>
+     </ng-container>
+         
+         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+         
+         <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+         
+     </mat-table> -->
+   </mat-card>
+</div>
