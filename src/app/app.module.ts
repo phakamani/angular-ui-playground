@@ -14,11 +14,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import { AppHeaderComponent } from '../app/app-header/app-header.component'
+import { RegisterComponent } from '../app/register/register.component'
+import { MatTableModule } from "@angular/material/table";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AppHeaderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatToolbarModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
