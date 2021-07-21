@@ -12,7 +12,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm run build:prod` to build the project. The build artifacts will be stored in the `dist/` directory. 
 
 ## Running unit tests
 
@@ -20,16 +20,12 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `npm run e2e` to execute the end-to-end tests via [Cypress](https://www.cypress.io/).
 
 ## Produce code coverage report
 Run `ng test --watch=false --code-coverage`
-Open the `coverage` folder
-This coverage folder contains the test report
+
+Open the ./coverage folder. This coverage folder contains the test report
 If not already installed, install the http-server globaly by running `npm install -g http-server`
 Run `cd coverage`
 Run `http-server -c-1` , if it is not working then run it from cmd in admin mode
@@ -42,9 +38,6 @@ Run `npm run start:prod`
 ## Run cypress for your prod build
 Run `npm run cypress:run`
 
-## Run build, run and e2e test prod version locally
-Notice, this is handled by npm-run-all
-
 ## Stack
 Material design
 Mock server node
@@ -54,11 +47,24 @@ unit testing jasmine
 e2e Cypress 
 Github
 invionapp <Design>
-
 udemy: tests course
+Firebase
 ## UI Prototype can be found at 
 https://projects.invisionapp.com/freehand/document/Lg5yK2jYD
 
-Example 1 
-http://www.nike.com
-http://superbalist.com
+## Database
+https://console.firebase.google.com/project/angular-playground-23023/database/angular-playground-23023-default-rtdb/data
+
+## Folder structure
+https://github.com/mathisGarberg/angular-folder-structure
+
+├── media  (Stores documentation)
+  └── src
+      ├── app
+      │   ├── core 
+              This module is for classes used by app.module. Resources which are always loaded such as route guards, HTTP interceptors, and application level services, such as the ThemeService and logging belong in this directory.
+      │   ├── data
+      │   ├── layout
+      │   ├── module
+      │   └── shared
+      └── styles
