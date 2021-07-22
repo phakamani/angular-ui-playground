@@ -11,10 +11,7 @@ a:hover, a:active{
   margin: 0;
 }
 mat-toolbar{
-  border-radius: 3px;
-}
-@media(max-width: 959px){
-  mat-toolbar{
-      border-radius: 0px;
-  }
+  height: 42px;
+  font-size: 14px;
+  font-weight: 400;
 }
