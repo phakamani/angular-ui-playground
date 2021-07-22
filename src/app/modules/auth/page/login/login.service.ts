@@ -1,9 +1,9 @@
-import { Response } from './../../model/response.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { User } from './../../model/user.model';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { User } from '../../../../data/types/user.model';
+import { Response } from '../../../../data/types/response.model';
 
 
 @Injectable({

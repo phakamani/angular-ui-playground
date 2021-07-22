@@ -1,6 +1,6 @@
-import { User } from './../../model/user.model';
+import { User } from './../../../../data/types/user.model';
 import { LoginService } from './login.service';
-import { Response } from 'src/model/response.model';
+import { Response } from './../../../../data/types/response.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 

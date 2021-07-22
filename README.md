@@ -57,7 +57,7 @@ https://console.firebase.google.com/project/angular-playground-23023/database/an
 
 ## Folder structure
 https://github.com/mathisGarberg/angular-folder-structure
-
+-------------------------------
 ├── media  (Stores documentation)
   └── src
       ├── app
@@ -68,3 +68,4 @@ https://github.com/mathisGarberg/angular-folder-structure
       │   ├── module
       │   └── shared
       └── styles
+--------------------------------
