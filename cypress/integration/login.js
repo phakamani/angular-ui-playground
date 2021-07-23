@@ -6,13 +6,10 @@ describe("Login page", () => {
     cy.visit('/');
 
     // assert if page contains "Login page"
-    cy.contains('login');
+    cy.contains('Login');
 
-    // user should click the submit button
-    cy.get('[href="/login"]').click();
-
-    // user should click the submit button
-    cy.get('[href="/login"]').click();
+    // user should click the login nav item
+    cy.get('[routerlink="/auth/login"]').click();
 
     cy.contains('Login page');
 

@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'login/:isLoggedOut',
+    component: LoginComponent
   }
 ];
 
