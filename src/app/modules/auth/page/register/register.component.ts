@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
       'email': new FormControl('', [Validators.required, Validators.email]),
       'number': new FormControl('', Validators.required),
       'password': new FormControl('', Validators.required),
-      'retypePassword': new FormControl('', Validators.required), 
+      'retypePassword': new FormControl('', Validators.required),
     })
   }
 
@@ -84,7 +84,7 @@ fetchPosts() {
       response => {
         console.log(response);
         this.fetchData = response;
-      }, 
+      },
       error => {
 
       }

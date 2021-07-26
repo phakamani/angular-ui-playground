@@ -1,11 +1,11 @@
-import { SUCCESSFUL_RESPONSE } from './../../../server/dbData';
-import { User } from './../../model/user.model';
-import { LoginService } from './login.service';
+import { SUCCESSFUL_RESPONSE } from './../../../../server/dbData';
+import { AuthService } from './auth.service';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpErrorResponse } from '@angular/common/http';
-fdescribe('LoginService', () => {
-  let service: LoginService,
+import { User } from 'src/app/data/types/user.model';
+fdescribe('AuthService', () => {
+  let service: AuthService,
     httpTestingController: HttpTestingController,
     loginUrl = '';
 
@@ -13,9 +13,9 @@ fdescribe('LoginService', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule]
     });
-    service = TestBed.inject(LoginService);
+    service = TestBed.inject(AuthService);
     httpTestingController = TestBed.inject<HttpTestingController>(HttpTestingController);
-    loginUrl = 'http://localhost:5000/login';
+    loginUrl = 'https://angular-playground-23023-default-rtdb.firebaseio.com/register.json';
   });
 
   it('should be created', () => {
@@ -26,14 +26,15 @@ fdescribe('LoginService', () => {
     const user: User = {
       userName: "userName",
       password: "password"
+
     };
     service.login(user).subscribe(res => {
       expect(res).toBeTruthy(); // blogs should not be null or undefined
-      expect(res).toEqual(SUCCESSFUL_RESPONSE);
+      expect(res.status).toEqual('success');
     })
 
     const req = httpTestingController.expectOne(loginUrl);
-    expect(req.request.method).toEqual('POST');
+    expect(req.request.method).toEqual('GET');
     req.flush(SUCCESSFUL_RESPONSE)
   });
 
@@ -61,7 +62,7 @@ fdescribe('LoginService', () => {
       statusText: 'Login failed'
     };
     const req = httpTestingController.expectOne(loginUrl);
-    expect(req.request.method).toEqual('POST');
+    expect(req.request.method).toEqual('GET');
     req.flush('Login failed', errorResponse)
   })
 
@@ -69,3 +70,4 @@ fdescribe('LoginService', () => {
     httpTestingController.verify();
   })
 })
+

@@ -1,8 +1,9 @@
-import { User } from './../../model/user.model';
-import { LoginService } from './login.service';
-import { Response } from 'src/model/response.model';
+import { AuthService } from './../../../../core/service/auth.service';
+import { User } from './../../../../data/types/user.model';
+import { Response } from './../../../../data/types/response.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,11 +16,16 @@ export class LoginComponent implements OnInit {
   response: Response;
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService
+    private authService: AuthService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.createForm();
+    if(this.route.snapshot.paramMap.get('isLoggedOut')) {
+      alert('User is logged out');
+      localStorage.removeItem('user');
+    }
   }
 
   createForm () {
@@ -41,17 +47,10 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.controls['password'].value
     };
 
-    this.loginService.login(user).subscribe((res) => {
+    this.authService.login(user).subscribe((res) => {
       this.response = res;
     }, error => {
-      if (error.error.status) {
-        this.response = error.error;
-      } else {
-        this.response = {
-          status: 'error',
-          message: 'Could not connect to server'
-        }
-      }
+      this.response = error;
     });
   }
 }

@@ -1,0 +1,22 @@
+:host{
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover, a:active{
+  color: lightgray;
+}
+.navigation-items{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+mat-toolbar{
+  height: 42px;
+  font-size: 14px;
+  font-weight: 400;
+}

@@ -6,13 +6,10 @@ describe("Login page", () => {
     cy.visit('/');
 
     // assert if page contains "Login page"
-    cy.contains('login');
+    cy.contains('Login');
 
-    // user should click the submit button
-    cy.get('[href="/login"]').click();
-
-    // user should click the submit button
-    cy.get('[href="/login"]').click();
+    // user should click the login nav item
+    cy.get('[routerlink="/auth/login"]').click();
 
     cy.contains('Login page');
 
@@ -22,7 +19,7 @@ describe("Login page", () => {
     // user should enter userName
     cy.get('[formControlName="userName"]').type("wrongUser");
 
-    // user should enter password
+  // user should enter password
     cy.get('[formControlName="password"]').type("password");
 
     // user should click the submit button
@@ -35,6 +32,7 @@ describe("Login page", () => {
   it("should login successfully", () => {
     // user should enter userName
     cy.get('[formControlName="userName"]').type("userName");
+    cy.wait(2000)
 
     // user should enter password
     cy.get('[formControlName="password"]').type("password");
