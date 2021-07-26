@@ -26,6 +26,7 @@ fdescribe('AuthService', () => {
     const user: User = {
       userName: "userName",
       password: "password"
+
     };
     service.login(user).subscribe(res => {
       expect(res).toBeTruthy(); // blogs should not be null or undefined
